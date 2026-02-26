@@ -767,6 +767,46 @@ a:hover { color: var(--teal-hover); }
 .footer__bottom p { font-size: .8125rem; color: rgba(255,255,255,.4); text-align: center; }
 
 /* ========================
+   WHATSAPP FAB
+   ======================== */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  background: #25D366;
+  color: #fff;
+  border-radius: 3rem;
+  padding: .875rem 1.25rem .875rem 1rem;
+  box-shadow: 0 4px 20px rgba(37,211,102,.45), 0 2px 8px rgba(0,0,0,.18);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .9rem;
+  letter-spacing: .01em;
+  transition: transform .2s ease, box-shadow .2s ease;
+  animation: fab-pulse 2.8s ease-in-out infinite;
+}
+.whatsapp-fab:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 28px rgba(37,211,102,.55), 0 4px 12px rgba(0,0,0,.22);
+  animation: none;
+}
+.whatsapp-fab__label {
+  white-space: nowrap;
+}
+@keyframes fab-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.45), 0 2px 8px rgba(0,0,0,.18); }
+  50%       { box-shadow: 0 4px 28px rgba(37,211,102,.75), 0 2px 8px rgba(0,0,0,.18); }
+}
+@media (max-width: 480px) {
+  .whatsapp-fab__label { display: none; }
+  .whatsapp-fab { padding: .9rem; border-radius: 50%; }
+}
+
+/* ========================
    RESPONSIVE TWEAKS
    ======================== */
 @media (max-width: 599px) {
